@@ -1,7 +1,7 @@
 {
   "name": "react-easy-map",
   "description": "react easy map ",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "private": false,
   "contributors": [
@@ -17,12 +17,8 @@
     }
   },
   "keywords": [
-    "vite",
-    "vanilla-ts",
-    "template",
+    "react",
     "boilerplate",
-    "node",
-    "module",
     "library",
     "map",
     "mapper",

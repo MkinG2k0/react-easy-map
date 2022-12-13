@@ -1,32 +1,32 @@
-import React, { FC, ReactHTML } from 'react'
+import React, { FC } from 'react'
 
-import { MapProps } from './interface'
+import { HocProps, MapProps, WrapProps } from './interface'
+
+export type { HocProps, MapProps }
 
 export const Map: FC<MapProps> = ({
 	keyName = 'id',
 	data,
-	Component,
+	item,
 	props,
 	onClick,
 	withIndex,
 	type,
 	typeItem,
-	withOnClick,
 	className,
 }) => {
 	return (
 		<Wrap type={type} className={className}>
-			{data?.map((item, index) => (
+			{data.map((dataItem, index) => (
 				<WrapItem
-					data={{ ...item, ...props }}
+					data={{ ...dataItem, ...props }}
 					onClick={onClick}
 					typeItem={typeItem}
-					Component={Component}
+					item={item}
 					withIndex={withIndex}
-					withOnClick={withOnClick}
 					index={index}
 					key={`map-${
-						item ? (keyName in item ? item[keyName] : index) : index
+						item ? (keyName in dataItem ? dataItem[keyName] : index) : index
 					}`}
 				/>
 			))}
@@ -34,24 +34,19 @@ export const Map: FC<MapProps> = ({
 	)
 }
 
+export const MapWithHoc: HocProps = (observer) => observer(Map)
+
 Map.defaultProps = {
 	withIndex: false,
-	withOnClick: false,
+	keyName: 'id',
 }
 
-const WrapItem = ({
-	Component,
-	typeItem,
-	onClick,
-	index,
-	withIndex,
-	withOnClick,
-	data,
-}) => {
-	const onClickSpread = withOnClick
-		? { onClick: () => onClick?.(data, index) }
+const WrapItem = ({ item, typeItem, onClick, index, withIndex, data }) => {
+	const onClickSpread = onClick
+		? { onClick: (...props) => onClick(data, index, ...props) }
 		: {}
 	const withIndexSpread = withIndex ? { index } : {}
+	const Component = item
 
 	const spread = {
 		...data,
@@ -67,15 +62,11 @@ const WrapItem = ({
 		)
 		return <>{WrapComp}</>
 	}
+
 	return <Component {...spread} />
 }
 
-interface WrapPops {
-	type?: keyof ReactHTML
-	className?: string
-}
-
-const Wrap: FC<WrapPops> = ({ children, type, className }) => {
+const Wrap: FC<WrapProps> = ({ children, type, className }) => {
 	const typeElement = type || className ? 'div' : ''
 
 	if (typeElement) {

@@ -19,7 +19,7 @@ export const BasicMap = () => {
 export const EasyMap = () => {
 	return (
 		<>
-			<Map data={data} Component={Item} />
+			<Map data={data} item={Item} />
 		</>
 	)
 }

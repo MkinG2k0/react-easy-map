@@ -2,7 +2,6 @@ import './global.css'
 
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-// import { Map } from '../index'
 import { Map } from '../main'
 
 export default {
@@ -37,8 +36,7 @@ Base.args = {
 	className: 'asd',
 	keyName: 'id',
 	withIndex: true,
-	withOnClick: true,
-	Component: Component,
+	item: Component,
 }
 
 export const WithWrap = Template.bind({})
@@ -51,11 +49,11 @@ WithWrap.args = {
 	],
 	keyName: 'id',
 	withIndex: true,
-	withOnClick: true,
 	type: 'ul',
 	typeItem: 'li',
+	onClick: () => {},
 	className: 'wrap',
-	Component: Component,
+	item: Component,
 }
 
 export const WithProps = Template.bind({})
@@ -68,10 +66,8 @@ WithProps.args = {
 	],
 	keyName: 'id',
 	withIndex: true,
-	withOnClick: true,
-	type: 'ul',
-	typeItem: 'li',
+	onClick: () => {},
 	className: 'wrap',
-	Component: Component,
+	item: Component,
 	props: { anyFiled: 'value' },
 }

@@ -1,14 +1,22 @@
-import { ReactHTML } from 'react'
+import { JSXElementConstructor, ReactHTML, ReactNode } from 'react'
 
 export interface MapProps {
-	data: any[]
-	Component: any
+	data: Object[]
+	item: ReactNode
 	keyName?: string
 	props?: any
-	onClick?: (item: any, index: number) => void
+	onClick?: (item: any, index: number, ...props) => void
 	withIndex?: boolean
 	type?: keyof ReactHTML
 	typeItem?: keyof ReactHTML
-	withOnClick?: boolean
+	className?: string
+}
+
+export type HocProps = <T>(
+	hoc: (comp: any) => any
+) => JSXElementConstructor<MapProps>
+
+export interface WrapProps {
+	type?: keyof ReactHTML
 	className?: string
 }

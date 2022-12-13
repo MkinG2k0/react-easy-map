@@ -13,7 +13,7 @@ const data = [
 	{id: 3, name: 'Alex'},
 ]
 
-export const BasicMap = () => {
+const BasicMap = () => {
 	return (
 		<>
 			{data.map((item) => (
@@ -27,19 +27,15 @@ export const BasicMap = () => {
 
 ## With react-easy-map usage
 
+**WARNING prop keyName must be unique for each object**
+
 ```tsx
 import { Map } from 'react-easy-map'
 
-const data = [
-	{id: 1, name: 'Maga'},
-	{id: 2, name: 'Kama'},
-	{id: 3, name: 'Alex'},
-]
-
-export const EasyMap = () => {
+const EasyMap = () => {
 	return (
 		<>
-			<Map data={data} Component={Item}/>
+			<Map data={data} item={Item} keyName={'id'}/>
 		</>
 	)
 }
@@ -47,3 +43,33 @@ export const EasyMap = () => {
 const Item = (item) => <div>{item.name}</div>
 
 ```
+
+## With hoc , example with mobx-react
+
+```tsx
+import { observer } from 'mobx-react'
+import { MapWithHoc } from 'react-easy-map'
+
+// It is recommended to put it in a separate file
+export const ObserverMap = MapWithHoc(observer)
+//
+
+const EasyMap = () => {
+	return (
+		<>
+			<ObserverMap data={data} item={Item} keyName={'id'}/>
+		</>
+	)
+}
+
+const Item = (item) => <div>{item.name}</div>
+
+```
+
+## Type props components in react-easy-map
+
+```tsx
+import { MapProps, HocProps } from 'react-easy-map'
+```
+
+
