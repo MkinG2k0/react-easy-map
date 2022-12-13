@@ -1,0 +1,86 @@
+{
+  "name": "react-easy-map",
+  "description": "react easy map ",
+  "version": "1.0.1",
+  "license": "MIT",
+  "private": false,
+  "contributors": [
+    {
+      "name": "Mut Kama",
+      "email": "kamai122000@mail.ru"
+    }
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.mjs"
+    }
+  },
+  "keywords": [
+    "vite",
+    "vanilla-ts",
+    "template",
+    "boilerplate",
+    "node",
+    "module",
+    "library",
+    "map",
+    "easy"
+  ],
+  "main": "./dist/main.js",
+  "module": "./dist/main.mjs",
+  "typings": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite ",
+    "build": "tsc && vite build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^10.0.1",
+    "picocolors": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup-plugin-typescript-paths": "^1.4.0",
+    "rollup-plugin-visualizer": "^5.8.3",
+    "vite-plugin-progress": "^0.0.6",
+    "@babel/core": "^7.20.5",
+    "@storybook/addon-actions": "^6.5.14",
+    "@storybook/addon-essentials": "^6.5.14",
+    "@storybook/addon-interactions": "^6.5.14",
+    "@storybook/addon-links": "^6.5.14",
+    "@storybook/builder-vite": "^0.2.5",
+    "@storybook/react": "^6.5.14",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "babel-loader": "^8.3.0",
+    "eslint": "8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-sonarjs": "^0.16.0",
+    "eslint-plugin-storybook": "^0.6.8",
+    "prettier": "^2.7.1",
+    "typescript": "^4.9.3",
+    "vite": "^3.2.4",
+    "vite-plugin-svgr": "^2.2.2",
+    "vite-tsconfig-paths": "^3.6.0"
+  },
+  "packageManager": "yarn@3.2.1"
+}
