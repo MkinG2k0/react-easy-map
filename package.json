@@ -25,6 +25,7 @@
     "module",
     "library",
     "map",
+    "mapper",
     "easy"
   ],
   "main": "./dist/main.js",
