@@ -6,7 +6,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { Map } from '../main'
 
 export default {
-	title: 'Example/Map',
+	title: 'Usage/Map',
 	component: Map,
 	args: {
 		keyName: 'id',

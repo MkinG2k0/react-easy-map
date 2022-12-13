@@ -1,48 +1,22 @@
-Link to the documentation in storybook
-https://react-easy-map.vercel.app/
+<!-- Checkbox.stories.mdx -->
 
-## Basic react map usage
+import {Canvas, Meta, Story, CodeOrSourceMdx} from '@storybook/addon-docs';
+import {Map} from '../main'
+import {Item} from '../template'
 
-```tsx
-import { Map } from 'react-easy-map'
+<Meta title="Usage/Map" component={Map}/>
 
-const data = [
-	{id: 1, name: 'Maga'},
-	{id: 2, name: 'Kama'},
-	{id: 3, name: 'Alex'},
-]
+# Map
 
-export const BasicMap = () => {
-	return (
-		<>
-			{data.map((item) => (
-				<Item key={item.id} {...item} />
-			))}
-		</>
-	)
-}
+Basic usage react-easy-map
 
-```
-
-## With react-easy-map usage
-
-```tsx
-import { Map } from 'react-easy-map'
-
-const data = [
-	{id: 1, name: 'Maga'},
-	{id: 2, name: 'Kama'},
-	{id: 3, name: 'Alex'},
-]
-
-export const EasyMap = () => {
-	return (
-		<>
-			<Map data={data} Component={Item}/>
-		</>
-	)
-}
-
-const Item = (item) => <div>{item.name}</div>
-
-```
+<Canvas>
+	<Map
+		data={[
+			{id: 1, name: 'Maga'},
+			{id: 2, name: 'Kama'},
+			{id: 3, name: 'Alex'},
+		]}
+		Component={Item}
+	/>
+</Canvas>

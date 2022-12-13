@@ -1,6 +1,6 @@
-import { Map } from '~/main'
+import { Map } from '../src/main'
 
-const data = [
+export const data = [
 	{ id: 1, name: 'Maga' },
 	{ id: 2, name: 'Kama' },
 	{ id: 3, name: 'Alex' },
@@ -24,6 +24,6 @@ export const EasyMap = () => {
 	)
 }
 
-const Item = (item) => {
+export const Item = (item) => {
 	return <div>{item.name}</div>
 }
