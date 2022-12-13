@@ -34,10 +34,6 @@ export const Map: FC<MapProps> = ({
 	)
 }
 
-export const MYfunc = () => {
-	return 'false'
-}
-
 Map.defaultProps = {
 	withIndex: false,
 	withOnClick: false,
