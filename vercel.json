@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "./storybook-static/index.html",
-      "use": "@vercel/node"
-    }
-  ]
-}
