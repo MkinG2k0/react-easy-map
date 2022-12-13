@@ -1,5 +1,6 @@
-Link to the documentation in storybook
-https://react-easy-map.vercel.app/
+Link to the documentation in [storybook](https://react-easy-map.vercel.app/)
+
+Link to  [git-hub](https://github.com/MkinG2k0/react-easy-map)
 
 ## Basic react map usage
 
