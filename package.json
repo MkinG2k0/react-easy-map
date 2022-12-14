@@ -1,7 +1,7 @@
 {
   "name": "react-easy-map",
   "description": "react easy map ",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "private": false,
   "contributors": [
@@ -31,7 +31,6 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite ",
     "build": "tsc && vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

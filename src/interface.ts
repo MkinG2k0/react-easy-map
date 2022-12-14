@@ -1,7 +1,7 @@
 import { JSXElementConstructor, ReactHTML, ReactNode } from 'react'
 
 export interface MapProps {
-	data: Object[]
+	data?: Object[]
 	item: ReactNode
 	keyName?: string
 	props?: any

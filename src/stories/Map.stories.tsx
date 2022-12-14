@@ -33,7 +33,7 @@ Base.args = {
 		{ name: 'Component', id: 2 },
 		{ name: 'Component', id: 3 },
 	],
-	className: 'asd',
+	className: 'className',
 	keyName: 'id',
 	withIndex: true,
 	item: Component,

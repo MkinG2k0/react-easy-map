@@ -23,6 +23,8 @@ const BasicMap = () => {
 	)
 }
 
+const Item = (item) => <div>{item.name}</div>
+
 ```
 
 ## With react-easy-map usage

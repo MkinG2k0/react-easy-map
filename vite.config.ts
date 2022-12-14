@@ -49,8 +49,8 @@ export default defineConfig({
 					preserveExtensions: true,
 				}),
 				typescript({
-					sourceMap: false,
 					declaration: true,
+					sourceMap: true,
 					outDir: 'dist',
 					exclude: ['**/__tests__'],
 				}),

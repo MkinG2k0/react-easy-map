@@ -1,4 +1,4 @@
-<!-- Checkbox.stories.mdx -->
+<!-- Map.stories.mdx -->
 
 import {Canvas, Meta,} from '@storybook/addon-docs';
 import {Map} from '../main'
@@ -12,11 +12,14 @@ Basic usage react-easy-map
 
 <Canvas>
 	<Map
-		data={[
-			{id: 1, name: 'Maga'},
-			{id: 2, name: 'Kama'},
-			{id: 3, name: 'Alex'},
-		]}
+		data={
+			[
+				{id: 1, name: 'Maga'},
+				{id: 2, name: 'Kama'},
+				{id: 3, name: 'Alex'},
+			]
+		}
 		item={Item}
+		keyName={'id'}
 	/>
 </Canvas>

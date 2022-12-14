@@ -17,7 +17,7 @@ export const Map: FC<MapProps> = ({
 }) => {
 	return (
 		<Wrap type={type} className={className}>
-			{data.map((dataItem, index) => (
+			{data?.map((dataItem, index) => (
 				<WrapItem
 					data={{ ...dataItem, ...props }}
 					onClick={onClick}
