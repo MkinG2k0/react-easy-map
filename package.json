@@ -1,7 +1,7 @@
 {
   "name": "react-easy-map",
   "description": "react easy map ",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "license": "MIT",
   "private": false,
   "contributors": [
@@ -79,5 +79,8 @@
     "vite-plugin-svgr": "^2.2.2",
     "vite-tsconfig-paths": "^3.6.0"
   },
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.1",
+  "dependencies": {
+    "@mdx-js/react": "^2.2.1"
+  }
 }

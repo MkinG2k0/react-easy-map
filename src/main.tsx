@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 
-import { HocProps, MapProps, WrapProps } from './interface'
+import { HocProps, MapProps, Obj, TOnClickItem, WrapProps } from './interface'
 
 export type { HocProps, MapProps }
 
-export const Map: FC<MapProps> = ({
+export function Map<Props extends Obj, AlwaysProps extends Obj>({
 	keyName = 'id',
 	data,
 	item,
@@ -14,7 +14,7 @@ export const Map: FC<MapProps> = ({
 	type,
 	typeItem,
 	className,
-}) => {
+}: MapProps<Props, AlwaysProps>) {
 	return (
 		<Wrap type={type} className={className}>
 			{data?.map((dataItem, index) => (
@@ -25,9 +25,7 @@ export const Map: FC<MapProps> = ({
 					item={item}
 					withIndex={withIndex}
 					index={index}
-					key={`map-${
-						item ? (keyName in dataItem ? dataItem[keyName] : index) : index
-					}`}
+					key={`map-${keyName in dataItem ? dataItem[keyName] : index}`}
 				/>
 			))}
 		</Wrap>
@@ -41,7 +39,7 @@ Map.defaultProps = {
 	keyName: 'id',
 }
 
-const WrapItem = ({ item, typeItem, onClick, index, withIndex, data }) => {
+function WrapItem({ item, typeItem, onClick, index, withIndex, data }) {
 	const onClickSpread = onClick
 		? { onClick: (...props) => onClick(data, index, ...props) }
 		: {}
