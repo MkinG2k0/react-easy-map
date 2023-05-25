@@ -1,10 +1,9 @@
-<!-- Map.stories.mdx -->
-
-import {Canvas, Meta,} from '@storybook/addon-docs';
+import {Canvas, Meta} from '@storybook/blocks'
 import {Map} from '../main'
-import {Item} from '../template'
+import { Component } from '../components/atoms/test-item'
 
-<Meta title="Usage/Map" component={Map}/>
+
+<Meta title="Example/Introduction" />
 
 # Map
 
@@ -19,7 +18,7 @@ Basic usage react-easy-map
 				{id: 3, name: 'Alex'},
 			]
 		}
-		item={Item}
+		item={Component}
 		keyName={'id'}
 	/>
 </Canvas>

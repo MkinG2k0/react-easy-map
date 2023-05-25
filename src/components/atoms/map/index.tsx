@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
-
-import { HocProps, MapProps, Obj, TOnClickItem, WrapProps } from './interface'
+import { createElement, FC, PropsWithChildren } from 'react'
+import { HocProps, MapProps, Obj, WrapProps } from '../../../interface/interface'
 
 export type { HocProps, MapProps }
 
@@ -40,9 +39,7 @@ Map.defaultProps = {
 }
 
 function WrapItem({ item, typeItem, onClick, index, withIndex, data }) {
-	const onClickSpread = onClick
-		? { onClick: (...props) => onClick(data, index, ...props) }
-		: {}
+	const onClickSpread = onClick ? { onClick: (...props) => onClick(data, index, ...props) } : {}
 	const withIndexSpread = withIndex ? { index } : {}
 	const Component = item
 
@@ -53,26 +50,18 @@ function WrapItem({ item, typeItem, onClick, index, withIndex, data }) {
 	}
 
 	if (typeItem) {
-		const WrapComp = React.createElement(
-			typeItem,
-			{},
-			<Component {...spread} />,
-		)
+		const WrapComp = createElement(typeItem, {}, <Component {...spread} />)
 		return <>{WrapComp}</>
 	}
 
 	return <Component {...spread} />
 }
 
-const Wrap: FC<WrapProps> = ({ children, type, className }) => {
+const Wrap: FC<PropsWithChildren<WrapProps>> = ({ children, type, className }) => {
 	const typeElement = type || className ? 'div' : ''
 
 	if (typeElement) {
-		const WrapComp = React.createElement(
-			typeElement,
-			{ className },
-			<>{children}</>,
-		)
+		const WrapComp = createElement(typeElement, { className }, <>{children}</>)
 		return <>{WrapComp}</>
 	}
 

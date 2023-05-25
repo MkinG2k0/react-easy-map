@@ -1,9 +1,4 @@
-import {
-	JSXElementConstructor,
-	ReactElement,
-	ReactHTML,
-	ReactNode,
-} from 'react'
+import { JSXElementConstructor, ReactElement, ReactHTML, ReactNode } from 'react'
 
 export type TOnClickItem<Props> = (item: Props, index: number, ...props) => void
 
@@ -12,7 +7,7 @@ export interface MapProps<Props extends Obj, AlwaysProps extends Obj> {
 	onClick?: TOnClickItem<Props>
 	item:
 		| ((
-				props: Props & AlwaysProps
+				props: Props & AlwaysProps,
 				// (Func extends TOnClickItem<Props>
 				// 	? { onClick?: TOnClickItem<Props> }
 				// 	: {})
@@ -32,9 +27,9 @@ export interface MapProps<Props extends Obj, AlwaysProps extends Obj> {
 export type HocProps = <
 	Props extends Obj,
 	AlwaysProps extends Obj,
-	Func extends TOnClickItem<Props>
+	Func extends TOnClickItem<Props>,
 >(
-	hoc: (comp: any) => any
+	hoc: (comp: any) => any,
 ) => JSXElementConstructor<MapProps<Props, AlwaysProps>>
 
 export interface WrapProps {
