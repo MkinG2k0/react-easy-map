@@ -1,0 +1,8 @@
+{
+  "builds": [
+    {
+      "src": "./storybook-static/index.html",
+      "use": "@vercel/node"
+    }
+  ]
+}
