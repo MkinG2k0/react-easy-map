@@ -1,20 +1,24 @@
 import { createElement, FC, PropsWithChildren } from 'react'
 import { HocProps, MapProps, Obj, WrapProps } from '../../../interface/interface'
+import * as React from 'react'
 
 export type { HocProps, MapProps }
 
-export function Map<Props extends Obj, AlwaysProps extends Obj>({
+export function Map<
+	Props extends Obj,
+	AlwaysProps extends Obj,
+	TPropIn extends string | undefined = undefined,
+>({
 	keyName = 'id',
 	data,
 	item,
 	props,
-	onClick,
 	withIndex,
 	type,
 	typeItem,
 	className,
 	propsIn,
-}: MapProps<Props, AlwaysProps>) {
+}: MapProps<Props, AlwaysProps, TPropIn>) {
 	return (
 		<Wrap type={type} className={className}>
 			{data?.map((dataItem, index) => {
@@ -23,7 +27,6 @@ export function Map<Props extends Obj, AlwaysProps extends Obj>({
 						data={dataItem}
 						propsIn={propsIn}
 						props={props}
-						onClick={onClick}
 						typeItem={typeItem}
 						item={item}
 						withIndex={withIndex}
@@ -43,18 +46,13 @@ Map.defaultProps = {
 	keyName: 'id',
 }
 
-function WrapItem({ item, typeItem, propsIn, onClick, index, props, withIndex, data }) {
-	const onClickSpread = onClick
-		? { onClick: (...props: any[]) => onClick(data, index, ...props) }
-		: {}
-
+function WrapItem({ item, typeItem, propsIn, index, props, withIndex, data }) {
 	const withIndexSpread = withIndex ? { index } : {}
 	const Component = item
 	const merge = propsIn ? { [propsIn]: data, props } : { ...data, ...props }
 
 	const spread = {
 		...merge,
-		...onClickSpread,
 		...withIndexSpread,
 	}
 

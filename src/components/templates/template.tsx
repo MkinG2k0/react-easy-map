@@ -20,7 +20,7 @@ export const BasicMap = () => {
 export const CustomPropsMap = () => {
 	return (
 		<>
-			<Map data={data} item={Item} propsIn={'data'} />
+			<Map data={data} item={({}) => <div>{}</div>} propsIn={'dataaa'} />
 		</>
 	)
 }
@@ -28,7 +28,7 @@ export const CustomPropsMap = () => {
 export const EasyMap = () => {
 	return (
 		<>
-			<Map data={data} item={Item} propsIn={''} />
+			<Map data={data} item={({}) => <div>{}</div>} withIndex />
 		</>
 	)
 }
