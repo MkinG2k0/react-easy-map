@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Component } from '../test-item'
 
-import { Map } from './index'
+import { Map } from './'
 
 type Story = StoryObj<typeof Map>
 

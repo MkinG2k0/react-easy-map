@@ -33,8 +33,8 @@ module.exports = {
 	],
 	overrides: [],
 	parser: '@typescript-eslint/parser',
-
-	plugins: ['react', '@typescript-eslint', 'jsx-a11y', 'promise', 'prettier'],
+// 'promise',
+	plugins: ['react', '@typescript-eslint', 'jsx-a11y',  'prettier'],
 	rules: {
 		indent: [
 			// отступы
