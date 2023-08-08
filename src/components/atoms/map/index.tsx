@@ -44,7 +44,10 @@ Map.defaultProps = {
 }
 
 function WrapItem({ item, typeItem, propsIn, onClick, index, props, withIndex, data }) {
-	const onClickSpread = onClick ? { onClick: (...props) => onClick(data, index, ...props) } : {}
+	const onClickSpread = onClick
+		? { onClick: (...props: any[]) => onClick(data, index, ...props) }
+		: {}
+
 	const withIndexSpread = withIndex ? { index } : {}
 	const Component = item
 	const merge = propsIn ? { [propsIn]: data, props } : { ...data, ...props }

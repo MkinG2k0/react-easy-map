@@ -5,9 +5,7 @@ import { Map } from './'
 
 type Story = StoryObj<typeof Map>
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 export const Primary: Story = {
-	// More on args: https://storybook.js.org/docs/react/writing-stories/args
 	args: {},
 }
 

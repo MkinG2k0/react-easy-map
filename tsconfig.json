@@ -24,18 +24,17 @@
     "noEmit": true,
     "jsx": "preserve",
     "noImplicitAny": false,
-    "baseUrl": "./",
-    "paths": {
-      "~/*": [
-        "src/*"
-      ]
-    }
+    "baseUrl": "./src",
+
   },
   "include": [
-    "./src"
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
   ],
   "exclude": [
     "node_modules",
-    "./src/stories/**"
+    "./src/stories/**",
+    "./src/**/*.stories.ts",
+    "./src/**/*.stories.tsx"
   ]
 }

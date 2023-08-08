@@ -8,22 +8,15 @@ import progress from 'vite-plugin-progress'
 
 export default defineConfig({
 	plugins: [
-		// progress({
-		// 	format: `Building ${colors.green('[:bar]')} :percent :eta`,
-		// 	total: 100,
-		// 	width: 60,
-		// 	// complete: "=",
-		// 	// incomplete: "",
-		// }),
+		progress({
+			format: `Building ${colors.green('[:bar]')} :percent :eta`,
+			total: 100,
+			width: 60,
+			// complete: "=",
+			// incomplete: "",
+		}),
 	],
-	resolve: {
-		alias: [
-			{
-				find: '~',
-				replacement: path.resolve(__dirname, './src'),
-			},
-		],
-	},
+
 	server: {
 		port: 3123,
 	},

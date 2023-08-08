@@ -1,5 +1,5 @@
+import { Map } from 'components/atoms'
 import { FC } from 'react'
-import { Map } from '~/components'
 
 export const data = [
 	{ id: 1, name: 'Maga' },
