@@ -1,5 +1,1 @@
-export * from './atoms'
-export * from './pages'
-export * from './molecules'
-export * from './organism'
-export * from './templates'
+export * from './map'

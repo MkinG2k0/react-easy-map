@@ -1,4 +1,4 @@
-import { Map } from 'components/atoms'
+import { Map } from '../../../dist'
 import { FC } from 'react'
 
 export const data = [
@@ -55,9 +55,6 @@ export const EasyMap3 = () => {
 			<Map
 				data={data}
 				props={{ data: 'data' }}
-				onClick={(item, index, props) => {
-					console.log(item, index, props)
-				}}
 				item={({ id, name, data }) => Item({ name, data })}
 			/>
 		</>

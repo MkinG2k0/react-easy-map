@@ -1,5 +1,5 @@
 import { createElement, FC, PropsWithChildren } from 'react'
-import { HocProps, MapProps, Obj, WrapProps } from '../../../interface/interface'
+import { HocProps, MapProps, Obj, WrapProps } from 'interface/interface'
 import * as React from 'react'
 
 export type { HocProps, MapProps }
@@ -13,7 +13,7 @@ export function Map<
 	data,
 	item,
 	props,
-	withIndex,
+	withIndex = false,
 	type,
 	typeItem,
 	className,
@@ -40,11 +40,6 @@ export function Map<
 }
 
 export const MapWithHoc: HocProps = (observer) => observer(Map)
-
-Map.defaultProps = {
-	withIndex: false,
-	keyName: 'id',
-}
 
 function WrapItem({ item, typeItem, propsIn, index, props, withIndex, data }) {
 	const withIndexSpread = withIndex ? { index } : {}
