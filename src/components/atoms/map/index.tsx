@@ -13,20 +13,25 @@ export function Map<Props extends Obj, AlwaysProps extends Obj>({
 	type,
 	typeItem,
 	className,
+	propsIn,
 }: MapProps<Props, AlwaysProps>) {
 	return (
 		<Wrap type={type} className={className}>
-			{data?.map((dataItem, index) => (
-				<WrapItem
-					data={{ ...dataItem, ...props }}
-					onClick={onClick}
-					typeItem={typeItem}
-					item={item}
-					withIndex={withIndex}
-					index={index}
-					key={`map-${keyName in dataItem ? dataItem[keyName] : index}`}
-				/>
-			))}
+			{data?.map((dataItem, index) => {
+				return (
+					<WrapItem
+						data={dataItem}
+						propsIn={propsIn}
+						props={props}
+						onClick={onClick}
+						typeItem={typeItem}
+						item={item}
+						withIndex={withIndex}
+						index={index}
+						key={`map-${keyName in dataItem ? dataItem[keyName] : index}`}
+					/>
+				)
+			})}
 		</Wrap>
 	)
 }
@@ -38,13 +43,14 @@ Map.defaultProps = {
 	keyName: 'id',
 }
 
-function WrapItem({ item, typeItem, onClick, index, withIndex, data }) {
+function WrapItem({ item, typeItem, propsIn, onClick, index, props, withIndex, data }) {
 	const onClickSpread = onClick ? { onClick: (...props) => onClick(data, index, ...props) } : {}
 	const withIndexSpread = withIndex ? { index } : {}
 	const Component = item
+	const merge = propsIn ? { [propsIn]: data, props } : { ...data, ...props }
 
 	const spread = {
-		...data,
+		...merge,
 		...onClickSpread,
 		...withIndexSpread,
 	}

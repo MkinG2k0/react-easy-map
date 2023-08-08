@@ -96,7 +96,7 @@ module.exports = {
 		eqeqeq: [2], // только 3ое равенство "true === true"
 		'no-multi-assign': [2], // запретить множественное присвоение "const foo = bar = 0"
 		'default-param-last': [2], // дефолтные парметры функции пишутся в конце
-		'max-lines': [2, { max: 100, skipBlankLines: true }], // максимальная длина строк в файле
+		// 'max-lines': [2, { max: 100, skipBlankLines: true }], // максимальная длина строк в файле
 		// 'import/order': [
 		// 	'warn', // сортировка импортов
 		// 	{

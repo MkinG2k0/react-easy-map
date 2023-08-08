@@ -1,6 +1,5 @@
 import { FC } from 'react'
-
-import { Map } from '../src/main'
+import { Map } from '~/components'
 
 export const data = [
 	{ id: 1, name: 'Maga' },
@@ -18,10 +17,18 @@ export const BasicMap = () => {
 	)
 }
 
+export const CustomPropsMap = () => {
+	return (
+		<>
+			<Map data={data} item={Item} propsIn={'data'} />
+		</>
+	)
+}
+
 export const EasyMap = () => {
 	return (
 		<>
-			<Map data={data} item={Item} />
+			<Map data={data} item={Item} propsIn={''} />
 		</>
 	)
 }
@@ -61,6 +68,8 @@ export const Item: FC<{
 	name: string
 	data?: string
 	onClick?: any
-}> = ({ name, data, onClick }) => {
+}> = (props) => {
+	const { name, data, onClick } = props
+	console.log(props)
 	return <div onClick={onClick}>{name}</div>
 }

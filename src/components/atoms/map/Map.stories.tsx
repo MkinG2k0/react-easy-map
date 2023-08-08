@@ -90,3 +90,22 @@ export const WithProps: Story = {
 		props: { anyFiled: 'value' },
 	},
 }
+
+export const WithCustomNameProps: Story = {
+	args: {
+		data: [
+			{ name: 'Li', id: 1 },
+			{ name: 'Li', id: 2 },
+			{ name: 'Li', id: 3 },
+		],
+		keyName: 'id',
+		withIndex: true,
+		onClick: (...data) => {
+			console.log(data)
+		},
+		className: 'flex flex-col gap-2',
+		propsIn: 'data',
+		item: Component,
+		props: { anyFiled: 'value' },
+	},
+}

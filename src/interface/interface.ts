@@ -19,6 +19,7 @@ export interface MapProps<Props extends Obj, AlwaysProps extends Obj> {
 	type?: keyof ReactHTML
 	typeItem?: keyof ReactHTML
 	className?: string
+	propsIn?: string
 }
 
 // TOnClickItem<Props> extends TOnClickItem<Props>

@@ -6,17 +6,15 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
 import progress from 'vite-plugin-progress'
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
-		// https://github.com/jeddygong/vite-plugin-progress
-		progress({
-			format: `Building ${colors.green('[:bar]')} :percent :eta`,
-			total: 100,
-			width: 60,
-			// complete: "=",
-			// incomplete: "",
-		}),
+		// progress({
+		// 	format: `Building ${colors.green('[:bar]')} :percent :eta`,
+		// 	total: 100,
+		// 	width: 60,
+		// 	// complete: "=",
+		// 	// incomplete: "",
+		// }),
 	],
 	resolve: {
 		alias: [
@@ -32,13 +30,12 @@ export default defineConfig({
 	// preview: {
 	//   port: 3124,
 	// },
-	// https://vitejs.dev/guide/build.html#library-mode
 	build: {
 		manifest: true,
 		minify: true,
 		reportCompressedSize: true,
 		lib: {
-			entry: path.resolve(__dirname, 'src/main.tsx'),
+			entry: path.resolve(__dirname, 'src/main.ts'),
 			fileName: 'main',
 			formats: ['es', 'cjs'],
 		},
